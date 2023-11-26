@@ -90,7 +90,12 @@ const process = async (browser) => {
     await notifyMe(earliestDate);
   }
 
-  await delay(NEXT_SCHEDULE_POLL)
+  var min = 1000;
+  var max =13000;
+  var number = Math.floor(Math.random() * (max - min + 1)) + min;
+  console.log("Number",number);
+  await delay(number)
+  //await delay(NEXT_SCHEDULE_POLL)
 
   await process(browser)
 }
